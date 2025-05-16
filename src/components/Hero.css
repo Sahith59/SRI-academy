@@ -1,0 +1,187 @@
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  background-image: url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.7) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.hero-title {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.welcome {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease-in 0.2s both;
+}
+
+.academy-name {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: scaleUp 1s ease-in-out 0.4s both;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in 0.6s both;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 1s ease-in 0.8s both;
+}
+
+.badge {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 1s ease-in 1.2s both;
+}
+
+.hero-announcement {
+  animation: fadeIn 1s ease-in 1.4s both;
+  position: relative;
+  z-index: 2;
+  margin-top: 3rem;
+}
+
+.announcement-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #f4d03f 100%);
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+}
+
+.announcement-badge::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 53px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+  z-index: -1;
+  animation: glow 2s linear infinite;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+  
+  .welcome {
+    font-size: 1.2rem;
+  }
+  
+  .academy-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-badges {
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .announcement-badge {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+  }
+}
